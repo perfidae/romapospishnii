@@ -47,52 +47,60 @@
                 <p class="section-intro">Найкращі практичні демонстрації роботи діафрагми від професіоналів</p>
                 
                 <div class="video-grid">
-                    <div class="video-card fade-in" data-delay="0">
+                    <div class="video-card fade-in" data-video="f3cvqTP5fQw" data-delay="0">
                         <div class="video-thumbnail">
                             <i class="fas fa-play-circle video-icon"></i>
                             <h3>Що таке діафрагма</h3>
+                            <p>Основи роботи діафрагми камери</p>
                         </div>
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/f3cvqTP5fQw" 
+                            <iframe class="video-player" 
+                                    data-src="https://www.youtube.com/embed/f3cvqTP5fQw?autoplay=1&rel=0" 
                                     title="Що таке діафрагма" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
                         </div>
                     </div>
 
-                    <div class="video-card fade-in" data-delay="100">
+                    <div class="video-card fade-in" data-video="_H9GIkF2wM4" data-delay="100">
                         <div class="video-thumbnail">
                             <i class="fas fa-cogs video-icon"></i>
                             <h3>Будова діафрагми</h3>
+                            <p>Внутрішня конструкція та механізм</p>
                         </div>
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/_H9GIkF2wM4" 
+                            <iframe class="video-player" 
+                                    data-src="https://www.youtube.com/embed/_H9GIkF2wM4?autoplay=1&rel=0" 
                                     title="Будова діафрагми" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
                         </div>
                     </div>
 
-                    <div class="video-card fade-in" data-delay="200">
+                    <div class="video-card fade-in" data-video="_p3_AYyDWPw" data-delay="200">
                         <div class="video-thumbnail">
                             <i class="fas fa-sliders-h video-icon"></i>
                             <h3>Налаштування</h3>
+                            <p>Практичні поради по налаштуванню</p>
                         </div>
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/_p3_AYyDWPw" 
+                            <iframe class="video-player" 
+                                    data-src="https://www.youtube.com/embed/_p3_AYyDWPw?autoplay=1&rel=0" 
                                     title="Налаштування діафрагми" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
                         </div>
                     </div>
 
-                    <div class="video-card fade-in" data-delay="300">
+                    <div class="video-card fade-in" data-video="nS-vbKzAzac" data-delay="300">
                         <div class="video-thumbnail">
                             <i class="fas fa-sun video-icon"></i>
                             <h3>Діафрагма та світлосила</h3>
+                            <p>Вплив на експозицію та якість</p>
                         </div>
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/nS-vbKzAzac" 
+                            <iframe class="video-player" 
+                                    data-src="https://www.youtube.com/embed/nS-vbKzAzac?autoplay=1&rel=0" 
                                     title="Діафрагма та світлосила" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
@@ -114,6 +122,7 @@
     </footer>
 
     <script>
+        // Smooth scroll
         document.querySelectorAll('.scroll-link[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -122,6 +131,45 @@
                 });
             });
         });
+
+        // Video player functionality
+        document.querySelectorAll('.video-card').forEach(card => {
+            const thumbnail = card.querySelector('.video-thumbnail');
+            const player = card.querySelector('.video-player');
+            
+            thumbnail.addEventListener('click', function() {
+                // Hide thumbnail, show video
+                thumbnail.style.display = 'none';
+                player.src = player.dataset.src;
+                player.style.display = 'block';
+                
+                // Add playing class for animations
+                card.classList.add('video-playing');
+            });
+            
+            // Keyboard accessibility
+            thumbnail.setAttribute('tabindex', '0');
+            thumbnail.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    thumbnail.click();
+                }
+            });
+        });
+
+        // Staggered animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.animationDelay = `${entry.target.dataset.delay}ms`;
+                        entry.target.classList.add('fade-in');
+                    }, index * 50);
+                }
+            });
+        });
+
+        document.querySelectorAll('.video-card, .fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
