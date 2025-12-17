@@ -11,149 +11,38 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo-back">
-                    <i class="fas fa-arrow-left"></i>
-                    <i class="fas fa-camera-retro"></i>
-                    Діафрагма
-                </a>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="index.html"><i class="fas fa-home"></i> Головна</a></li>
-                        <li><a href="index.html#fundamentals"><i class="fas fa-lightbulb"></i> Основи</a></li>
-                        <li><a href="index.html#artistry"><i class="fas fa-palette"></i> Художній контроль</a></li>
-                        <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> DoF Калькулятор</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> На головну
+            </a>
+            <h1>Перемінна діафрагма камери</h1>
         </div>
     </header>
 
     <main>
-        <section class="hero-page">
-            <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-content page-hero">
-                    <h1><i class="fas fa-sliders-h"></i> Перемінна Діафрагма Камери</h1>
-                    <p class="hero-subtitle">Практичні відеоуроки про роботу з діафрагмою у реальному часі</p>
-                    <a href="#videos" class="btn-primary scroll-link">Дивитися відео <i class="fas fa-play"></i></a>
-                </div>
+        <h2>Відео приклади</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <h3>Що таке діафрагма</h3>
+                <iframe src="https://www.youtube.com/embed/f3cvqTP5fQw" allowfullscreen></iframe>
             </div>
-        </section>
-
-        <section id="videos" class="section">
-            <div class="container">
-                <h2><i class="fas fa-video"></i> Відео Приклади</h2>
-                <p class="section-intro">Найкращі практичні демонстрації роботи діафрагми від професіоналів</p>
-                
-                <div class="video-grid">
-                    <div class="video-card fade-in" data-video="f3cvqTP5fQw" data-delay="0">
-                        <div class="video-thumbnail">
-                            <i class="fas fa-play-circle video-icon"></i>
-                            <h3>Що таке діафрагма</h3>
-                            <p>Основи роботи діафрагми камери</p>
-                        </div>
-                        <div class="video-container">
-                             <iframe src="https://www.youtube.com/embed/f3cvqTP5fQw" allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-                    <div class="video-card fade-in" data-video="_H9GIkF2wM4" data-delay="100">
-                        <div class="video-thumbnail">
-                            <i class="fas fa-cogs video-icon"></i>
-                            <h3>Будова діафрагми</h3>
-                            <p>Внутрішня конструкція та механізм</p>
-                        </div>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/_H9GIkF2wM4" allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-                    <div class="video-card fade-in" data-video="_p3_AYyDWPw" data-delay="200">
-                        <div class="video-thumbnail">
-                            <i class="fas fa-sliders-h video-icon"></i>
-                            <h3>Налаштування</h3>
-                            <p>Практичні поради по налаштуванню</p>
-                        </div>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/_p3_AYyDWPw" allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-                    <div class="video-card fade-in" data-video="nS-vbKzAzac" data-delay="300">
-                        <div class="video-thumbnail">
-                            <i class="fas fa-sun video-icon"></i>
-                            <h3>Діафрагма та світлосила</h3>
-                            <p>Вплив на експозицію та якість</p>
-                        </div>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/nS-vbKzAzac" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
+            <div class="video-item">
+                <h3>Будова</h3>
+                <iframe src="https://www.youtube.com/embed/_H9GIkF2wM4" allowfullscreen></iframe>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Діафрагма — Душа Об'єктива</p>
-            <div class="footer-links">
-                <a href="index.html"><i class="fas fa-home"></i> На головну</a>
-                <a href="#videos"><i class="fas fa-arrow-up"></i> Вгору</a>
+            <div class="video-item">
+                <h3>Налаштування</h3>
+                <iframe src="https://www.youtube.com/embed/_p3_AYyDWPw" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <h3>Діафрагма та світлосила</h3>
+                <iframe src="https://www.youtube.com/embed/nS-vbKzAzac" allowfullscreen></iframe>
             </div>
         </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Діафрагма — Душа Об'єктива</p>
+        <a href="index.html">← Повернутися на головну</a>
     </footer>
-
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('.scroll-link[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Video player functionality
-        document.querySelectorAll('.video-card').forEach(card => {
-            const thumbnail = card.querySelector('.video-thumbnail');
-            const player = card.querySelector('.video-player');
-            
-            thumbnail.addEventListener('click', function() {
-                // Hide thumbnail, show video
-                thumbnail.style.display = 'none';
-                player.src = player.dataset.src;
-                player.style.display = 'block';
-                
-                // Add playing class for animations
-                card.classList.add('video-playing');
-            });
-            
-            // Keyboard accessibility
-            thumbnail.setAttribute('tabindex', '0');
-            thumbnail.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    thumbnail.click();
-                }
-            });
-        });
-
-        // Staggered animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.animationDelay = `${entry.target.dataset.delay}ms`;
-                        entry.target.classList.add('fade-in');
-                    }, index * 50);
-                }
-            });
-        });
-
-        document.querySelectorAll('.video-card, .fade-in').forEach(el => observer.observe(el));
-    </script>
 </body>
 </html>
