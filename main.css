@@ -50,8 +50,7 @@ body {
     align-items: center;
 }
 
-.logo,
-.logo-back {
+.logo {
     font-size: 1.5rem;
     font-weight: 700;
     display: flex;
@@ -61,34 +60,10 @@ body {
     text-decoration: none;
 }
 
-.logo-back:hover {
+.logo:hover {
     color: var(--text);
 }
 
-/* лінк "На головну" на відео‑сторінці */
-.back-link {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.back-link:hover {
-    background: rgba(59, 130, 246, 0.1);
-    box-shadow: var(--glow);
-}
-
-.page-title {
-    margin: 0;
-    color: var(--text);
-}
-
-/* навігація на головній */
 .nav ul {
     display: flex;
     list-style: none;
@@ -149,24 +124,6 @@ body {
     background-clip: text;
 }
 
-/* ===== HERO (відео‑сторінка) ===== */
-.hero-page {
-    height: 70vh;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #3b82f6 100%);
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-top: 80px;
-}
-
-.page-hero h1 {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    background: linear-gradient(45deg, var(--text), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-}
-
 .hero-subtitle {
     font-size: 1.3rem;
     max-width: 600px;
@@ -176,7 +133,6 @@ body {
 
 /* ===== КНОПКИ ===== */
 .btn-primary,
-.btn-secondary,
 .scroll-link {
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -189,10 +145,6 @@ body {
     cursor: pointer;
     border: none;
     font-size: 1rem;
-}
-
-.btn-primary,
-.scroll-link {
     background: linear-gradient(45deg, var(--accent), var(--accent-dark));
     color: white;
     box-shadow: var(--shadow);
@@ -202,17 +154,6 @@ body {
 .scroll-link:hover {
     transform: translateY(-3px);
     box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--text);
-    border: 2px solid var(--accent);
-}
-
-.btn-secondary:hover {
-    background: var(--accent);
-    color: var(--primary);
 }
 
 .hero-buttons {
@@ -229,7 +170,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* ===== СЕКЦІЇ (головна) ===== */
+/* ===== СЕКЦІЇ ===== */
 .section,
 .section-alt {
     padding: 100px 0;
@@ -279,7 +220,7 @@ h3 {
     gap: 2rem;
 }
 
-/* ===== КАРТКИ (головна) ===== */
+/* ===== КАРТКИ ===== */
 .card,
 .author-card {
     background: rgba(255, 255, 255, 0.1);
@@ -386,119 +327,6 @@ h3 {
 
 .results {
     text-align: center;
-}
-
-/* ===== ВІДЕО‑СТОРІНКА ===== */
-
-.videos-main {
-    max-width: 1200px;
-    margin: 120px auto 40px;
-    padding: 0 20px 40px;
-}
-
-.videos-title {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* сітка відео */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-}
-
-@media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* картка відео */
-.video-item {
-    background: rgba(15, 23, 42, 0.9);
-    border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    overflow: hidden;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
-}
-
-.video-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
-}
-
-/* прев’ю */
-.video-thumbnail {
-    padding: 24px 20px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    position: relative;
-}
-
-.video-thumbnail:focus {
-    outline: 2px solid #3b82f6;
-    outline-offset: 2px;
-}
-
-.video-icon {
-    position: absolute;
-    left: 20px;
-    top: 18px;
-    font-size: 26px;
-    color: #f97316;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-}
-
-.video-thumbnail h3 {
-    margin-left: 40px;
-    margin-bottom: 4px;
-    font-size: 1.15rem;
-}
-
-.video-thumbnail p {
-    margin-left: 40px;
-    color: #cbd5e1;
-    font-size: 0.95rem;
-}
-
-/* iframe */
-.video-player {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: none;
-    display: none; /* показуємо тільки після кліку */
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    background: rgba(15, 23, 42, 0.8);
-    padding: 2rem 0;
-    text-align: center;
-    backdrop-filter: blur(20px);
-}
-
-.footer p {
-    margin: 0;
-    color: var(--text-muted);
-}
-
-/* ===== Анімація fade-in (якщо потрібно) ===== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* ===== RESPONSIVE ===== */
