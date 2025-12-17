@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Діафрагма — Душа Об'єктива | Повний Посібник</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-camera-retro"></i>
+                    Діафрагма
+                </h1>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#about"><i class="fas fa-user"></i> Про нас</a></li>
+                        <li><a href="#fundamentals"><i class="fas fa-lightbulb"></i> Основи</a></li>
+                        <li><a href="#artistry"><i class="fas fa-palette"></i> Художній контроль</a></li>
+                        <li><a href="#technical"><i class="fas fa-cogs"></i> Техніка</a></li>
+                        <li><a href="variable-aperture.html" class="nav-highlight"><i class="fas fa-sliders-h"></i> Перемінна діафрагма</a></li>
+                        <li><a href="#calculator"><i class="fas fa-calculator"></i> DoF Калькулятор</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Контролюйте Дихання Вашого Об'єктива</h2>
+                <p>Діафрагма — це не просто число. Це ваш головний інструмент для керування світлом, різкістю та емоціями кадру.</p>
+                <div class="hero-buttons">
+                    <a href="#fundamentals" class="btn-primary">Розпочати подорож</a>
+                    <a href="variable-aperture.html" class="btn-secondary">Перемінна діафрагма <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h3>Від Автора</h3>
+                <div class="author-card">
+                    <blockquote>"Привіт! Мене звати [Ім'я], і я присвятив роки, намагаючись зрозуміти, як маленька зміна f/числа може кардинально змінити історію в кадрі."</blockquote>
+                    <p>Цей сайт створено для того, щоб поділитися цією магією з вами. Наша місія — перетворити складні оптичні поняття на прості та зрозумілі уроки.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="fundamentals" class="section-alt">
+            <div class="container">
+                <h3><i class="fas fa-microscope"></i> Анатомія Світла та F-Числа</h3>
+                <div class="grid-2">
+                    <div class="card fade-in">
+                        <h4>Що таке Діафрагма?</h4>
+                        <p>Фізичний механізм пелюсток всередині об'єктива, який контролює розмір світлового отвору. Чим більше світла — тим менше f-число.</p>
+                        <div class="aperture-demo">
+                            <i class="fas fa-circle-notch fa-spin"></i>
+                            <span>Пелюстки в русі</span>
+                        </div>
+                    </div>
+                    <div class="card fade-in">
+                        <h4>F-числа — Це Просто!</h4>
+                        <p>Кожен повний стоп (від \(f/4\) до \(f/5.6\)) подвоює або зменшує кількість світла вдвічі. Це ключ Експозиційного Трикутника.</p>
+                        <div class="exposure-triangle">
+                            <div class="triangle">
+                                <div class="side iso">ISO</div>
+                                <div class="side shutter">Шторка</div>
+                                <div class="side aperture active">Діафрагма</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="artistry" class="section">
+            <div class="container">
+                <h3><i class="fas fa-palette"></i> Художній Контроль: Глибина Різкості</h3>
+                <div class="grid-3">
+                    <div class="card dof-card shallow fade-in">
+                        <h4>Мала Глибина <span>\(f/1.4 - f/4\)</span></h4>
+                        <p>Портрети. Кремове боке. Тривимірність.</p>
+                    </div>
+                    <div class="card dof-card deep fade-in">
+                        <h4>Велика Глибина <span>\(f/8 - f/16\)</span></h4>
+                        <p>Пейзажі. Гіперфокальна відстань. Все різке.</p>
+                    </div>
+                    <div class="card fade-in">
+                        <h4>Якість Боке</h4>
+                        <p>Округлі пелюстки = приємні світлові плями. Форма визначає магію розмиття.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technical" class="section-alt">
+            <div class="container">
+                <h3><i class="fas fa-search"></i> Технічні Тонкощі</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h4>Дифракція</h4>
+                        <p>При \(f/18+\) світло розсіюється. Золота середина: \(f/5.6 - f/8\).</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Ефект Зірки</h4>
+                        <p>\(f/11+\) перетворює світло на промені. Кількість = пелюсткам.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="calculator" class="section">
+            <div class="container">
+                <h3><i class="fas fa-calculator"></i> Калькулятор DoF</h3>
+                <div id="dof-calculator-app" class="calculator">
+                    <div class="input-group">
+                        <label>Фокусна відстань (мм)</label>
+                        <input type="range" id="focal_length" min="10" max="200" value="50">
+                        <span id="focal_value">50mm</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Діафрагма (f/)</label>
+                        <input type="range" id="aperture" min="1" max="22" step="0.1" value="8">
+                        <span id="aperture_value">f/8</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Відстань (м)</label>
+                        <input type="range" id="distance" min="0.1" max="50" step="0.1" value="5">
+                        <span id="distance_value">5m</span>
+                    </div>
+                    <button onclick="calculateDoF()" class="btn-primary full">Розрахувати</button>
+                    <div id="dof-results" class="results">
+                        <div class="dof-visual">
+                            <div class="near-bar"></div>
+                            <div class="focus-bar"></div>
+                            <div class="far-bar"></div>
+                        </div>
+                        <div class="dof-numbers">
+                            <p><strong>Total DoF:</strong> <span id="total_dof">∞</span></p>
+                            <p><strong>Від:</strong> <span id="near_limit">4.2</span>м <strong>До:</strong> <span id="far_limit">∞</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Діафрагма — Душа Об'єктива. Всі права захищені.</p>
+            <a href="variable-aperture.html" class="footer-link">Перемінна діафрагма →</a>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
