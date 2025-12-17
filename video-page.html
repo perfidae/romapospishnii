@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перемінна діафрагма камери</title>
 
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="video-page.css">
 </head>
 <body>
 
@@ -24,51 +24,53 @@
     <h2 class="videos-title">Відео приклади</h2>
 
     <div class="video-grid">
-
-        <div class="video-item">
+        <div class="video-item" data-video="f3cvqTP5fQw">
             <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-play-circle video-icon"></i>
                 <h3>Що таке діафрагма</h3>
                 <p>Основи роботи діафрагми камери</p>
             </div>
             <iframe class="video-player"
-                    data-src="https://www.youtube.com/embed/f3cvqTP5fQw?autoplay=1&rel=0"
-                    allowfullscreen></iframe>
+                    src="https://www.youtube.com/embed/f3cvqTP5fQw?autoplay=1&rel=0"
+                    allowfullscreen
+                    title="Що таке діафрагма"></iframe>
         </div>
 
-        <div class="video-item">
+        <div class="video-item" data-video="_H9GIkF2wM4">
             <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-cogs video-icon"></i>
                 <h3>Будова</h3>
                 <p>Внутрішня конструкція та механізм</p>
             </div>
             <iframe class="video-player"
-                    data-src="https://www.youtube.com/embed/_H9GIkF2wM4?autoplay=1&rel=0"
-                    allowfullscreen></iframe>
+                    src="https://www.youtube.com/embed/_H9GIkF2wM4?autoplay=1&rel=0"
+                    allowfullscreen
+                    title="Будова діафрагми"></iframe>
         </div>
 
-        <div class="video-item">
+        <div class="video-item" data-video="_p3_AYyDWPw">
             <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-sliders-h video-icon"></i>
                 <h3>Налаштування</h3>
                 <p>Практичні налаштування діафрагми</p>
             </div>
             <iframe class="video-player"
-                    data-src="https://www.youtube.com/embed/_p3_AYyDWPw?autoplay=1&rel=0"
-                    allowfullscreen></iframe>
+                    src="https://www.youtube.com/embed/_p3_AYyDWPw?autoplay=1&rel=0"
+                    allowfullscreen
+                    title="Налаштування діафрагми"></iframe>
         </div>
 
-        <div class="video-item">
+        <div class="video-item" data-video="nS-vbKzAzac">
             <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-sun video-icon"></i>
                 <h3>Діафрагма та світлосила</h3>
                 <p>Вплив на експозицію та яскравість</p>
             </div>
             <iframe class="video-player"
-                    data-src="https://www.youtube.com/embed/nS-vbKzAzac?autoplay=1&rel=0"
-                    allowfullscreen></iframe>
+                    src="https://www.youtube.com/embed/nS-vbKzAzac?autoplay=1&rel=0"
+                    allowfullscreen
+                    title="Діафрагма та світлосила"></iframe>
         </div>
-
     </div>
 </main>
 
@@ -77,27 +79,30 @@
 </footer>
 
 <script>
-    // запуск відео по кліку
     document.querySelectorAll('.video-item').forEach(item => {
         const thumb = item.querySelector('.video-thumbnail');
         const iframe = item.querySelector('.video-player');
 
-        thumb.addEventListener('click', () => {
-            if (!iframe.getAttribute('src')) {
-                iframe.setAttribute('src', iframe.dataset.src);
-            }
-            thumb.style.display = 'none';
-            iframe.style.display = 'block';
-            item.classList.add('video-playing');
+        // Клік по прев'ю
+        thumb.addEventListener('click', function(e) {
+            e.preventDefault();
+            playVideo(item);
         });
 
-        thumb.addEventListener('keydown', e => {
+        // Клавіатура (Enter/Space)
+        thumb.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                thumb.click();
+                playVideo(item);
             }
         });
     });
+
+    function playVideo(videoItem) {
+        videoItem.classList.add('video-playing');
+        const player = videoItem.querySelector('.video-player');
+        player.src = player.src; // тригер autoplay
+    }
 </script>
 
 </body>
