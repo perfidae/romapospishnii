@@ -482,3 +482,115 @@ h3 {
         height: 180px;
     }
 }
+/* Video Click-to-Play Styles */
+.video-item {
+    position: relative;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.video-thumbnail {
+    padding: 2.5rem 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(59,130,246,0.1);
+    min-height: 200px;
+    justify-content: center;
+}
+
+.video-thumbnail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(59,130,246,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-item:hover .video-thumbnail::before {
+    opacity: 1;
+}
+
+.video-icon {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    filter: drop-shadow(0 4px 8px rgba(59,130,246,0.4));
+}
+
+.video-item:hover .video-icon {
+    transform: scale(1.1) rotate(10deg);
+    color: #60a5fa;
+}
+
+.video-thumbnail h3 {
+    color: var(--text);
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.video-thumbnail p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.video-player {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 0 0 16px 16px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-item.video-playing .video-player {
+    display: block;
+}
+
+.video-item.video-playing {
+    transform: none;
+    cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-player {
+        height: 220px;
+    }
+    
+    .video-thumbnail {
+        padding: 2rem 1.5rem;
+        min-height: 180px;
+    }
+    
+    .video-icon {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-player {
+        height: 200px;
+    }
+}
