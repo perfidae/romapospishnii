@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перемінна діафрагма камери</title>
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -15,29 +16,28 @@
         <a href="index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> На головну
         </a>
-        <h1>Перемінна діафрагма камери</h1>
+        <h1 class="page-title">Перемінна діафрагма камери</h1>
     </div>
 </header>
 
-<main style="margin-top:120px;">
-    <h2 style="text-align:center; color:#f8fafc;">Відео приклади</h2>
+<main class="videos-main">
+    <h2 class="videos-title">Відео приклади</h2>
 
     <div class="video-grid">
 
         <div class="video-item">
-            <div class="video-thumbnail">
+            <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-play-circle video-icon"></i>
                 <h3>Що таке діафрагма</h3>
                 <p>Основи роботи діафрагми камери</p>
             </div>
-            <!-- БЕЗ src -->
             <iframe class="video-player"
                     data-src="https://www.youtube.com/embed/f3cvqTP5fQw?autoplay=1&rel=0"
                     allowfullscreen></iframe>
         </div>
 
         <div class="video-item">
-            <div class="video-thumbnail">
+            <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-cogs video-icon"></i>
                 <h3>Будова</h3>
                 <p>Внутрішня конструкція та механізм</p>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="video-item">
-            <div class="video-thumbnail">
+            <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-sliders-h video-icon"></i>
                 <h3>Налаштування</h3>
                 <p>Практичні налаштування діафрагми</p>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="video-item">
-            <div class="video-thumbnail">
+            <div class="video-thumbnail" tabindex="0">
                 <i class="fas fa-sun video-icon"></i>
                 <h3>Діафрагма та світлосила</h3>
                 <p>Вплив на експозицію та яскравість</p>
@@ -91,8 +91,6 @@
             item.classList.add('video-playing');
         });
 
-        // підтримка Enter / Пробіл
-        thumb.setAttribute('tabindex', '0');
         thumb.addEventListener('keydown', e => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
