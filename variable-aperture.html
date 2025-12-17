@@ -112,7 +112,16 @@
             </div>
         </div>
     </footer>
-    
-    <script src="script.js"></script>
+
+    <script>
+        document.querySelectorAll('.scroll-link[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
